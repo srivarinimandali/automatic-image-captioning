@@ -1,0 +1,48 @@
+<html>
+    <head>
+	<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+        <style>
+		
+            html, body { margin: 0; padding: 0; width: 100%; height: 100%; }
+            a { display: block; width: 100%; height: 100%; }
+			.container {
+             position: relative;
+             text-align: center;
+             color: white;
+			 font-family: "Lucida Handwriting", Cursive;
+			 font-size: 50px;
+           }
+
+.row {
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 50%;
+}
+        </style>
+    </head>
+    <body>	
+     <audio controls hidden="true" autoplay>
+     <source src="{{url_for('static', filename='speech.mp3')}}" type="audio/mpeg">
+     </audio>
+	 </a>	
+<div class="row">
+  <div class="column">
+    <a href="{{ url_for('capturephoto') }}"><img src="{{url_for('static', filename='navigate2.gif')}}" align="right" width="100%" height="560" ></a>
+  </div>
+  <div class="column">
+  <a href="{{ url_for('selectimage') }}"><img src="{{url_for('static', filename='a.gif')}}" align="left" width="100%" height="560" ></a>
+     
+  </div>
+  </body>
+</html>
