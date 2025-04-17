@@ -1,24 +1,32 @@
 
-# 🖼️ Automatic Image Captioning Web App
+# 🖼️ Automatic Image Captioning Web App for Visually Impaired
 
-This project is an **Automatic Image Captioning Web App** that uses a deep learning model trained on image descriptions to generate captions for uploaded or webcam-captured images. It features a camera interface, image selection, and a Flask backend to serve a caption prediction engine.
+This project is an **Automatic Image Captioning Web App** that uses a deep learning model trained on image descriptions to generate captions for uploaded or webcam-captured images. It features a camera interface, image selection, and a Flask backend to serve a caption prediction engine.  
+✨ **Specially designed to assist visually impaired users** by providing audio and text-based image descriptions.
 
 ![Python](https://img.shields.io/badge/Python-Flask-blue?style=for-the-badge&logo=python)
 ![HTML](https://img.shields.io/badge/Frontend-HTML%2FCSS%2FJS-lightgrey?style=for-the-badge&logo=html5)
 ![Deep Learning](https://img.shields.io/badge/Model-CNN%2BRNN%20Caption%20Generator-orange?style=for-the-badge)
 ![OpenCV](https://img.shields.io/badge/Webcam-Capture%20Photo-brightgreen?style=for-the-badge&logo=opencv)
 ![NLP](https://img.shields.io/badge/NLP-Tokenizer%20%7C%20Beam%20Search-red?style=for-the-badge)
+![Accessibility](https://img.shields.io/badge/Accessibility-Visually%20Impaired%20Support-ff69b4?style=for-the-badge)
+
 
 ---
 
 ## 🔍 Features
 
-- 📸 Capture image using webcam
-- 🖼️ Upload image from local device
-- 🧠 Generate natural language captions for images
-- 🗂️ Dataset-based image description lookup
-- 🎨 Clean and engaging UI (HTML/CSS/JS + Bootstrap)
-- 🎙️ Voice instructions and user prompts
+### 🧑‍🦯 Accessibility-First Design
+- 🎧 Audio-based instructions for navigation
+- 🗣️ Text-to-speech integration for caption playback
+- 📷 Capture or upload images independently
+- 👁️ Describe surroundings visually for blind and low-vision users
+
+### 🔒 User Features
+- Webcam & file image input
+- Real-time caption generation
+- User-friendly interface
+- Voice-enabled interactions
 
 ---
 
@@ -31,7 +39,7 @@ This project is an **Automatic Image Captioning Web App** that uses a deep learn
   - RNN/GRU/LSTM decoder
   - Beam search or greedy decoding
   - Pre-trained tokenizer (`tokenizer.p`)
-- **Tools**: OpenCV (for webcam capture), PIL, NumPy, Keras/TensorFlow
+- **Tools**: OpenCV, PIL, NumPy, Keras/TensorFlow
 
 ---
 
@@ -60,58 +68,35 @@ descriptions.txt             ← Caption dataset
 
 ## 🔧 Setup & Run Locally
 
-### 1. Clone the repository
-
 ```bash
 git clone https://github.com/yourusername/image-captioning-webapp.git
 cd image-captioning-webapp
-```
 
-### 2. Create & activate virtual environment
-
-```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-### 3. Install dependencies
-
-```bash
 pip install -r requirements.txt
 ```
 
-### 4. Place your model files
+### Add Model Files
+- Place weights in `/Model files`
+- Add `tokenizer.p`, `descriptions.txt` to project root
 
-- Save trained model weights and architecture in the `/Model files` folder
-- Make sure `tokenizer.p` and `descriptions.txt` are placed at the root
-
-### 5. Start the Flask app
-
+### Run App
 ```bash
 python app.py
 ```
 
-The app runs on `http://localhost:5000`
+Go to `http://localhost:5000`
 
 ---
 
-## 🧪 How It Works
+## 🧠 How It Works
 
-1. Navigate to `localhost:5000`
-2. Choose an image input mode:
-   - Upload image
-   - Capture using webcam
-3. Click **"Generate the Caption"**
-4. View the result with dynamically rendered caption
-
----
-
-## 🧠 Model Summary
-
-- **Encoder**: Pre-trained CNN extracts image features
-- **Decoder**: LSTM/GRU model trained on MSCOCO-style dataset
-- **Input**: Image → Extracted features + partial sentence
-- **Output**: Natural language sentence describing the image
+1. User accesses camera or uploads an image
+2. CNN extracts features from image
+3. RNN generates descriptive sentence from features
+4. Caption is rendered and optionally read aloud
 
 ---
 ## 👨‍💻 Developer
